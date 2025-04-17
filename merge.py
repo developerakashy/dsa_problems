@@ -42,4 +42,44 @@ def merge_sort(A):
     return sorted_arr
 
 
-print(merge_sort([23,12,45,12,6]))
+print(merge_sort([23,12,45, 45,12,6]))
+
+
+def merge(A):
+    n = len(A)
+
+    if n == 1:
+        return A
+
+    half = n // 2
+
+    L = merge(A[:half])
+    R = merge(A[half:])
+
+    l = len(L)
+    r = len(R)
+
+    temp_l = 0
+    temp_r = 0
+
+    new_arr = []
+    while temp_l < l and temp_r < r:
+        if L[temp_l] < R[temp_r]:
+            new_arr.append(L[temp_l])
+            temp_l += 1
+        else:
+            new_arr.append(R[temp_r])
+            temp_r += 1
+
+    while temp_l < l:
+        new_arr.append(L[temp_l])
+        temp_l += 1
+
+    while temp_r < r:
+        new_arr.append(R[temp_r])
+        temp_r += 1
+
+
+    return new_arr
+
+print(merge([26, 62, 62, -11, 76]))
