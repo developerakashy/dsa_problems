@@ -1,4 +1,4 @@
-def rotated_matrix_array(nums):
+def rotated_sorted_array(nums):
     left = 0
     right = len(nums) - 1
 
@@ -13,4 +13,4 @@ def rotated_matrix_array(nums):
     return nums[right]
 
 nums = [3,4,5,1,2]
-print(rotated_matrix_array(nums))
+print(rotated_sorted_array(nums))
